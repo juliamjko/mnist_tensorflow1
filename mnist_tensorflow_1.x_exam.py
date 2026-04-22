@@ -1,4 +1,5 @@
-import tensorflow as tf 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import keras
 
 
@@ -97,8 +98,8 @@ with tf.Session() as sess:
     print("Tensorflow:",tf._version_)
     
     data = {
-    '이름': ['김병규'],
-    '학번': [12345],
+    '이름': ['고명주'],
+    '학번': [2412185],
     '학과': ['인공지능공학부']
     }
 
