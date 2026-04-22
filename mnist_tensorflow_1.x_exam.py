@@ -1,5 +1,5 @@
-import tensorflow as tf 
-# tf.disable_v2_behavior()
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import keras
 
 
@@ -27,14 +27,14 @@ n_classes = 10  # MNIST total classes (0-9 digits)
 
 # Placeholders for input and output
 
-# X = tf.placeholder(tf.float32, [None, n_input])
-# Y = tf.placeholder(tf.float32, [None, n_classes])
+X = tf.placeholder(tf.float32, [None, n_input])
+Y = tf.placeholder(tf.float32, [None, n_classes])
 
 # X = tf.Variable(tf.ones(tf.float32, [None, n_input]),dtype=tf.float32)
-# X = tf.Variable(tf.ones(tf.float32, [None, n_classes]),dtype=tf.float32)
+# Y = tf.Variable(tf.ones(tf.float32, [None, n_classes]),dtype=tf.float32)
 
-X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
-X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
+# X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
+# Y = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
 
 # Weights and biases initialization
 weights = {
@@ -102,7 +102,7 @@ with tf.Session() as sess:
     # Calculate accuracy for MNIST test images
     print("Final Test Accuracy:", sess.run(accuracy, feed_dict={X: x_test, Y: y_test}),"%")
     print()
-    print("Tensorflow:",tf._version_)
+    print("Tensorflow:",tf.__version__)
     
     data = {
     '이름': ['고명주'],
