@@ -38,15 +38,15 @@ X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
 
 # Weights and biases initialization
 weights = {
-    'h1': tf.Variable(tf.random_normal([n_input, n_hidden1])),
-    'h2': tf.Variable(tf.random_normal([n_hidden1, n_hidden2])),
-    'out': tf.Variable(tf.random_normal([n_hidden2, n_classes]))
+    'h1': tf.Variable(tf.random.normal([n_input, n_hidden1])),
+    'h2': tf.Variable(tf.random.normal([n_hidden1, n_hidden2])),
+    'out': tf.Variable(tf.random.normal([n_hidden2, n_classes]))
 }
 
 biases = {
-    'b1': tf.Variable(tf.random_normal([n_hidden1])),
-    'b2': tf.Variable(tf.random_normal([n_hidden2])),
-    'out': tf.Variable(tf.random_normal([n_classes]))
+    'b1': tf.Variable(tf.random.normal([n_hidden1])),
+    'b2': tf.Variable(tf.random.normal([n_hidden2])),
+    'out': tf.Variable(tf.random.normal([n_classes]))
 }
 
 # Create model
