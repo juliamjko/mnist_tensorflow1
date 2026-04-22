@@ -26,10 +26,15 @@ n_hidden2 = 256
 n_classes = 10  # MNIST total classes (0-9 digits)
 
 # Placeholders for input and output
+
 # X = tf.placeholder(tf.float32, [None, n_input])
-X = tf.Variable(tf.ones(tf.float32, [None, n_input]),dtype=tf.float32)
 # Y = tf.placeholder(tf.float32, [None, n_classes])
-X = tf.Variable(tf.ones(tf.float32, [None, n_classes]),dtype=tf.float32)
+
+# X = tf.Variable(tf.ones(tf.float32, [None, n_input]),dtype=tf.float32)
+# X = tf.Variable(tf.ones(tf.float32, [None, n_classes]),dtype=tf.float32)
+
+X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
+X = tf.keras.Input(shape=(n_input,), dtype=tf.float32)
 
 # Weights and biases initialization
 weights = {
